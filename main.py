@@ -1,6 +1,5 @@
 from mnn import network, layer, activations as a, dataset, trainer
 
-
 #create network
 net = network()
 #create input layer w/ relu activation function
@@ -16,8 +15,10 @@ net.add_layer(lay)
 lay = layer(4,1,a.straight)
 net.add_layer(lay)
 
+
 #print the network
 #allows for easy viewing
+#most classes can be printed
 print(net)
 
 #create dataset
@@ -27,9 +28,11 @@ data = dataset()
 #add some data to it
 #this emulates an and gate
 data.add_data([0,0],[0])
-data.add_data([0,1],[1])
-data.add_data([1,0],[1])
+data.add_data([0,1],[0.5])
+data.add_data([1,0],[0.5])
 data.add_data([1,1],[1])
+
+print(net.run_all_data(data))
 
 
 #create trainer
