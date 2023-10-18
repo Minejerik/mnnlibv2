@@ -1,6 +1,5 @@
-from mnn import network,layer, activations as a, dataset
+from mnn import network, layer, activations as a, dataset
 from mnn.utils import mae_loss, list_avg
-import csv
 
 net = network()
 lay = layer(2,2,a.relu)
