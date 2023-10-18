@@ -1,12 +1,12 @@
-from mnn import network, layer, activations as a, dataset
+from mnn import network, layer, activations as a, dataset,trainer
 from mnn.utils import mae_loss, list_avg
 
 net = network()
 lay = layer(2,2,a.relu)
 net.add_layer(lay)
-lay = layer(2,2,a.relu)
+lay = layer(2,4,a.relu)
 net.add_layer(lay)
-lay = layer(2,1,a.straight)
+lay = layer(4,1,a.straight)
 net.add_layer(lay)
 
 print(net)
@@ -17,20 +17,17 @@ data.add_data([0,1],[1])
 data.add_data([1,0],[1])
 data.add_data([1,1],[0])
 
-real, temp = net.run_all_data(data)
+train = trainer(net,75,data)
 
-losses = []
 
-for r,t in zip(real,temp):
-  losses.append(mae_loss(r,t))
+print(train.get_full_data_loss())
 
-print(real)
-print(temp)
+train.start_train()
 
-print("\n")
+print(train.get_full_data_loss())
 
-print(losses)
 
-print(list_avg(losses))
+net = train.get_net()
 
+print(net.run_all_data(data))
 # net.save(r"network.txt")
