@@ -12,6 +12,12 @@ class layer:
     t = f"neuron count: {len(self.neurons)}"
     return t
 
+  def get_weights(self):
+    weights = []
+    for n in self.neurons:
+      weights += n.get_weights()
+    return weights
+
 
   def run(self, input):
     temp = []

@@ -32,6 +32,12 @@ class network:
       r_outs.append(self.run(i))
     return r_outs,input.outs
 
+  def get_weights(self):
+    weights = []
+    for layer in self.layers:
+      weights += layer.get_weights()
+    return weights
+  
   def save(self,file_name):
     data = []
     layers = self.layers

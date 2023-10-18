@@ -16,3 +16,6 @@ class neuron():
     temp = sum(temp)
     temp = self.activation(inp=temp)
     return temp
+
+  def get_weights(self):
+    return self.weights
