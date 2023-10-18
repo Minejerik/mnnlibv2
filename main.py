@@ -4,12 +4,12 @@ from mnn import network, layer, activations as a, dataset, trainer
 #create network
 net = network()
 #create input layer w/ relu activation function
-#it has 2 input and output nodes
-lay = layer(2,2,a.relu)
+#it has 2 input and 4 output nodes
+lay = layer(2,4,a.relu)
 net.add_layer(lay)
 #create hidden layer also w/ relu activation function
-#this time w/ 2 input nodes and 4 output nodes
-lay = layer(2,4,a.relu)
+#this time w/ 4 input nodes and 4 output nodes
+lay = layer(4,4,a.relu)
 net.add_layer(lay)
 #create output layer w/ straight activation function
 #it has 4 input nodes and 1 output node
@@ -34,7 +34,7 @@ data.add_data([1,1],[1])
 
 #create trainer
 #this trains the network in a later step
-train = trainer(net,75,data)
+train = trainer(net,60,data)
 
 #print network loss before training
 print(train.get_full_data_loss())
