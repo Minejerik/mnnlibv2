@@ -1,18 +1,19 @@
 from mnn import network, layer, activations as a, dataset, trainer
+from random import choice
 
 #create network
 net = network()
 #create input layer w/ relu activation function
 #it has 2 input and 4 output nodes
-lay = layer(2,4,a.relu)
+lay = layer(1,12,a.relu)
 net.add_layer(lay)
 #create hidden layer also w/ relu activation function
 #this time w/ 4 input nodes and 4 output nodes
-lay = layer(4,4,a.relu)
+lay = layer(12,12,a.relu)
 net.add_layer(lay)
 #create output layer w/ straight activation function
 #it has 4 input nodes and 1 output node
-lay = layer(4,1,a.straight)
+lay = layer(12,1,a.relu)
 net.add_layer(lay)
 
 
@@ -27,12 +28,12 @@ data = dataset()
 
 #add some data to it
 #this emulates an and gate
-data.add_data([0,0],[0])
-data.add_data([0,1],[0.5])
-data.add_data([1,0],[0.5])
-data.add_data([1,1],[1])
+data.add_data([0],[0])
+data.add_data([1],[1])
+data.add_data([2],[2])
+data.add_data([3],[3])
 
-print(net.run_all_data(data))
+# print(net.run_all_data(data))
 
 
 #create trainer
