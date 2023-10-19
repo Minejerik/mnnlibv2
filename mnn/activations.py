@@ -11,3 +11,9 @@ def sigmoid(inp):
 
 def straight(inp):
   return inp
+
+def binary(inp):
+  if inp < 0:
+    return 0
+  else:
+    return 1

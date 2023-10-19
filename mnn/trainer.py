@@ -7,7 +7,7 @@ class trainer:
     self.epochs = epochs
     self.data = data
     self.learn_rate = learn_rate
-    self.debug = False
+    self.debug = True
 
   def get_full_data_loss(self):
     losses = []
