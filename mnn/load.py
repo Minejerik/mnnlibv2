@@ -44,6 +44,8 @@ class load:
           start = True
           startpos = data.split("\n").index(row)
 
+
+    datalist = [d for d in datalist if "" != d]
     for d in datalist:
       temp = d.split("\n")
       r = temp[0].split(",")
@@ -56,6 +58,7 @@ class load:
       for n,w in zip(lay.neurons,temp2):
         w = w.replace(" ","")
         t = w.split("\n")
+        # print(t)
         t = [float(i) for i in t]
         t = [weight.weight(i) for i in t]
         n.weights = t

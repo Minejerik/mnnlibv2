@@ -1,3 +1,5 @@
+import json
+
 class network:
   def __init__(self):
     self.layers = []
@@ -19,10 +21,10 @@ class network:
       
     if len(input) != self.layers[0].inp_count:
       raise Exception(f"Input size {len(input)} does not match layer input size {self.layers[0].inp_count}")
-      
+
     for layer in self.layers:
       input = layer.run(input)
-    # print(input)
+
     return input
 
   def run_all_data(self,input):
