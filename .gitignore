@@ -1,0 +1,6 @@
+/dist
+MANIFEST
+/.pythonlibs
+/.upm
+.replit
+replit.nix
