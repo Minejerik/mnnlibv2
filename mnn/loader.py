@@ -12,7 +12,7 @@ def load_csv(file_name):
           gender = row[4]
           gender = 1 if gender == "male" else 2
           survived = int(row[1])
-          inp = [gender,int(row[5].split('.')[0])]
+          inp = [gender,int(row[5].split('.')[0]),int(row[2])]
           out = [survived]
           data.add_data(inp,out)
         except:

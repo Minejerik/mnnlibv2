@@ -3,6 +3,7 @@ from mnn.activations import relu,sigmoid,straight,binary,leakyrelu
 
 
 def geta(a):
+  a = a.strip()
   match a:
     case "relu":
       return relu
