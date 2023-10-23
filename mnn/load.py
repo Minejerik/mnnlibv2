@@ -1,8 +1,10 @@
 from mnn import network,layer,weight
 from mnn.activations import relu,sigmoid,straight,binary,leakyrelu
+import logging
 
 
 def geta(a):
+  logger = logging.getLogger("mnn.load")
   a = a.strip()
   match a:
     case "relu":
@@ -15,6 +17,7 @@ def geta(a):
       return binary
     case "leakyrelu":
       return leakyrelu
+  logger.warn("Unknown activation function: '%s' using straight as default " % a)
   return straight
       
     

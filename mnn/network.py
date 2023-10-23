@@ -22,9 +22,17 @@ class network:
     if len(input) != self.layers[0].inp_count:
       raise Exception(f"Input size {len(input)} does not match layer input size {self.layers[0].inp_count}")
 
+    # temp = []
+    # temp.append(input)
+    
+
     for layer in self.layers:
       input = layer.run(input)
-
+      # temp.append(input)
+      
+    # with open("temp.txt", "w") as f:
+    #   json.dump(temp,f)
+    
     return input
 
   def run_all_data(self,input):
