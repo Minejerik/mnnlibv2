@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='mnn',
+    name='mnnlib',
     packages=['mnn'],
     version='0.2',
     license='MIT',
