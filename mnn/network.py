@@ -39,13 +39,3 @@ class network:
     for layer in self.layers:
       weights += layer.get_weights()
     return weights
-  
-  def save(self,file_name):
-    data = []
-    layers = self.layers
-    neurons = []
-    for layer in layers:
-      neurons += layer.neurons
-    for n in neurons:
-      data += n.weights
-    print(data)
