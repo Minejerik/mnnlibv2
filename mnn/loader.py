@@ -1,8 +1,11 @@
 from mnn.dataset import dataset
 import csv
+import logging
 
 
 def load_csv(file_name:str):
+  logger = logging.getLogger("mnn.load")
+  logger.warning("loader.load_csv is deprecated, use csvtils.csvreader instead!")
   data = dataset()
   with open(file_name, 'r') as csvfile:
     reader = csv.reader(csvfile,delimiter=";")

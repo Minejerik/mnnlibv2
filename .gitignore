@@ -6,3 +6,5 @@ MANIFEST
 replit.nix
 main.py
 *.mnn
+*.pyc
+*.csv
