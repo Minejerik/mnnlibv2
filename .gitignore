@@ -4,3 +4,4 @@ MANIFEST
 /.upm
 .replit
 replit.nix
+main.py
