@@ -5,3 +5,4 @@ from mnn.dataset import dataset
 from mnn.trainer import trainer
 from mnn.save import save
 from mnn.load import load
+from mnn.csvtils import csvreader, csvdata
