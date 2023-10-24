@@ -3,7 +3,7 @@ from mnn.neuron import neuron
 
 class layer:
 
-  def __init__(self, input_count, output_count, act_func):
+  def __init__(self, input_count:int, output_count:int, act_func):
     self.inp_count = input_count
     self.out_count = output_count
     self.neurons = []

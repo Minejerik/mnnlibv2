@@ -1,9 +1,12 @@
+from mnn import network
+
+
 class save:
-  def __init__(self,net):
+  def __init__(self,net:network):
     self.net = net
 
 
-  def save(self,file_name):
+  def save(self,file_name:str):
     layers = self.net.layers
     out = ""
     for l in layers:

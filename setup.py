@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name='mnnlib',
     packages=['mnn'],
-    version='0.2.1',
+    version='0.2.2',
     license='MIT',
     description='Minejerik Machine Learning library',
     author='minejerik',

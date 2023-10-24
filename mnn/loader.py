@@ -2,7 +2,7 @@ from mnn.dataset import dataset
 import csv
 
 
-def load_csv(file_name):
+def load_csv(file_name:str):
   data = dataset()
   with open(file_name, 'r') as csvfile:
     reader = csv.reader(csvfile,delimiter=";")

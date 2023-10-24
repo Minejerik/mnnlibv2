@@ -1,5 +1,5 @@
 class weight:
-  def __init__(self,weight):
+  def __init__(self,weight:float):
     self.weight = weight
 
   def get_weight(self):

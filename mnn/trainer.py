@@ -1,8 +1,9 @@
+from mnn import dataset, network
 from mnn.utils import mae_loss, list_avg, plus_minus
 from random import choice, random, uniform
 
 class trainer:
-  def __init__(self, net, epochs, data,learn_rate=0.1):
+  def __init__(self, net:network, epochs:int, data:dataset,learn_rate=0.1):
     self.net = net
     self.epochs = epochs
     self.data = data

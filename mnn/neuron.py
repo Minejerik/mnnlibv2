@@ -5,7 +5,7 @@ from random import uniform
 
 class neuron():
 
-  def __init__(self, inp_count, act_func):
+  def __init__(self, inp_count:int, act_func):
     self.weights = []
     self.activation = act_func
     for _ in range(inp_count):

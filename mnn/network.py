@@ -1,4 +1,6 @@
 import json
+from mnn.layer import layer as l
+from mnn.dataset import dataset
 
 class network:
   def __init__(self):
@@ -12,7 +14,7 @@ class network:
     t = f"layer_count: {len(self.layers)}\n{temp}"
     return t
 
-  def add_layer(self,layer):
+  def add_layer(self,layer:l):
     self.layers.append(layer)
 
   def run(self,input):
@@ -22,20 +24,12 @@ class network:
     if len(input) != self.layers[0].inp_count:
       raise Exception(f"Input size {len(input)} does not match layer input size {self.layers[0].inp_count}")
 
-    # temp = []
-    # temp.append(input)
-    
-
     for layer in self.layers:
       input = layer.run(input)
-      # temp.append(input)
-      
-    # with open("temp.txt", "w") as f:
-    #   json.dump(temp,f)
     
     return input
 
-  def run_all_data(self,input):
+  def run_all_data(self,input:dataset):
     ins = input.inps
     r_outs = []
     for i in ins:

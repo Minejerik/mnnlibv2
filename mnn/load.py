@@ -3,7 +3,7 @@ from mnn.activations import relu,sigmoid,straight,binary,leakyrelu
 import logging
 
 
-def geta(a):
+def geta(a:str):
   logger = logging.getLogger("mnn.load")
   a = a.strip()
   match a:
@@ -23,7 +23,7 @@ def geta(a):
     
 
 class load:
-  def __init__(self,file_name):
+  def __init__(self,file_name:str):
     self.file_name = file_name
 
 

@@ -5,3 +5,4 @@ MANIFEST
 .replit
 replit.nix
 main.py
+*.mnn
