@@ -6,4 +6,4 @@ class weight:
     return self.weight
 
   def __str__(self):
-    return f"{self.weight}"
+    return f"weight: {self.weight}"
