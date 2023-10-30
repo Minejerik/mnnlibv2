@@ -17,6 +17,10 @@ def mae_loss(y_true, y_pred):
 def list_avg(list):
   return sum(list) / len(list)
 
+def list_sub(list1,list2):
+  temp = [a_i - b_i for a_i, b_i in zip(list1, list2)]
+  return temp
+
 
 def plus_minus(a, b):
   t = random()
