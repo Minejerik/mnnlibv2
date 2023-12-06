@@ -3,4 +3,4 @@
 ### Minejerik Machine Learning Library
 
 
-### Dependancies = 0
+### Dependencies = 0
