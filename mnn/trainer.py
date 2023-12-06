@@ -3,6 +3,9 @@ from mnn.utils import mae_loss, list_avg, plus_minus
 from random import choice, random, uniform
 
 class trainer:
+  """
+  class used to train the network
+  """
   def __init__(self, net:network, epochs:int, data:dataset,learn_rate=0.1):
     self.net = net
     self.epochs = epochs
@@ -11,12 +14,18 @@ class trainer:
     self.debug = True
 
   def get_full_data_loss(self):
+    """
+    returns the loss of the full dataset fiven
+    """
     losses = []
     for i,o in zip(self.data.inps, self.data.outs):
       losses.append(mae_loss(self.net.run(i),o))
     return list_avg(losses)
 
   def get_net(self):
+    """
+    returns the network
+    """
     return self.net
 
   def print(self,string):
@@ -24,6 +33,9 @@ class trainer:
       print(string)
 
   def start_train(self):
+    """
+    starts training the network
+    """
     for epoch in range(self.epochs):
       self.print(f"Starting epoch {epoch}")
       weights = self.net.get_weights()

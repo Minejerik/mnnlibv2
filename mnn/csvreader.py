@@ -10,12 +10,19 @@ def isfloat(value):
     return False
 
 class csvreader:
+  """
+  simple class to read csv files
+  returns a csvdata class
+  """
   def __init__(self,file_name:str, delm=","):
     self.file_name = file_name
     self.delm = delm
 
 
   def read(self):
+    """
+    starts the reading of csv data
+    """
     data = csvdata()
     indexes = []
     with open(self.file_name, 'r', encoding='utf8') as csvfile:

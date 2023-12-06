@@ -1,5 +1,7 @@
 /dist
 MANIFEST
+poetry.lock
+pyproject.toml
 /.pythonlibs
 /.upm
 .replit

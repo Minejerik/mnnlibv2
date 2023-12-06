@@ -3,6 +3,9 @@ from mnn.layer import layer as l
 from mnn.dataset import dataset
 
 class network:
+  """
+  class that holds the network and all layers in it
+  """
   def __init__(self):
     self.layers = []
     self.run_func = None
@@ -15,9 +18,16 @@ class network:
     return t
 
   def add_layer(self,layer:l):
+    """
+    adds a layer to the network
+    """
     self.layers.append(layer)
 
   def run(self,input):
+    """
+    runs the network with an input
+    returns the output of the network
+    """
     if len(self.layers) == 0:
       raise Exception("No layers intilizsed")
       
@@ -30,6 +40,9 @@ class network:
     return input
 
   def run_all_data(self,input:dataset):
+    """
+    runs all data in a dataset and returns all outputs
+    """
     ins = input.inps
     r_outs = []
     for i in ins:
@@ -37,6 +50,9 @@ class network:
     return r_outs,input.outs
 
   def get_weights(self):
+    """
+    returns a lsit of all the weights in the network
+    """
     weights = []
     for layer in self.layers:
       weights += layer.get_weights()

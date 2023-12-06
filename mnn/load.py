@@ -23,11 +23,18 @@ def geta(a:str):
     
 
 class load:
+  """
+  used to load mnn model files
+  """
   def __init__(self,file_name:str):
     self.file_name = file_name
 
 
   def load(self):
+    """
+    loads the network from the file
+    returns network class
+    """
     data = ""
     net = network()
     with open(self.file_name,"r") as f:

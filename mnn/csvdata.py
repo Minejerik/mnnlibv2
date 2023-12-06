@@ -2,6 +2,11 @@ from mnn.dataset import dataset
 
 
 class csvdata:
+  """
+  data class for csv files
+  created by csvreader class
+  can output to dataset class
+  """
   def __init__(self):
     self.indexes = []
     self.data = []
@@ -9,6 +14,9 @@ class csvdata:
     self.tocombout = []
 
   def add_index(self, index):
+    """
+    add index to data
+    """
     self.indexes.append(index)
     self.data.append([])
 
@@ -18,6 +26,9 @@ class csvdata:
     return t
   
   def add_data(self, index,data):
+    """
+    adds data to the csvdata class
+    """
     if index not in self.indexes:
       raise Exception(f"Index '{index}' not in data")
     self.data[self.indexes.index(index)].append(data)
@@ -35,6 +46,10 @@ class csvdata:
     self.tocombout.append(index)
 
   def gen_data(self) -> dataset:
+
+    """
+    creates dataset based on data in class
+    """
 
     #this is a fucking mess
     #i am going to kill myself

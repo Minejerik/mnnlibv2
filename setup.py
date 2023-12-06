@@ -12,7 +12,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="mnnlib",
-    version="0.3.7",
+    version="0.3.8",
     description="Minejerik neural network library", 
     long_description=long_description,  
     long_description_content_type="text/markdown",

@@ -4,6 +4,9 @@ import logging
 
 
 def load_csv(file_name:str):
+  """
+  DEPRECATED DO NOT USE!!!!
+  """
   logger = logging.getLogger("mnn.load")
   logger.warning("loader.load_csv is deprecated, use csvtils.csvreader instead!")
   data = dataset()
