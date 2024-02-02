@@ -51,7 +51,7 @@ class network:
 
   def get_weights(self):
     """
-    returns a lsit of all the weights in the network
+    returns a list of all the weights in the network
     """
     weights = []
     for layer in self.layers:
