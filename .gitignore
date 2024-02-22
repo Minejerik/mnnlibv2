@@ -10,3 +10,5 @@ main.py
 *.mnn
 *.pyc
 *.csv
+mnn/__pycache__
+mnn/test/__pycache__

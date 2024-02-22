@@ -7,8 +7,7 @@ def load_csv(file_name:str):
   """
   DEPRECATED DO NOT USE!!!!
   """
-  logger = logging.getLogger("mnn.load")
-  logger.warning("loader.load_csv is deprecated, use csvreader instead!")
+  raise DeprecationWarning("This function is deprecated and will be removed in the future. Use csvreader.csvreader instead.")
   data = dataset()
   with open(file_name, 'r') as csvfile:
     reader = csv.reader(csvfile,delimiter=";")
