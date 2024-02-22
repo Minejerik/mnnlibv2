@@ -1,12 +1,14 @@
 import json
 from mnn.layer import layer as l
 from mnn.dataset import dataset
+from mnn.constants import VERSION
 
 class network:
   """
   class that holds the network and all layers in it
   """
   def __init__(self):
+    self.version = VERSION
     self.layers = []
     self.run_func = None
 

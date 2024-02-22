@@ -1,6 +1,5 @@
-## MNNlibV2
-### (Minejerik Neural Network Library Version 2)
-### Minejerik Machine Learning Library
+# MNNlibV2
 
+This is version two of my neural network library.
 
-### Dependencies = 0
+This does work with pypy, and it is recommended to use it with pypy.

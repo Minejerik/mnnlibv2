@@ -1,5 +1,6 @@
 # Always prefer setuptools over distutils
 from setuptools import setup, find_packages
+from mnn.constants import VERSION
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
@@ -12,7 +13,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="mnnlib",
-    version="0.3.9",
+    version=VERSION,
     description="Minejerik neural network library", 
     long_description=long_description,  
     long_description_content_type="text/markdown",
