@@ -6,11 +6,12 @@ class trainer:
   """
   class used to train the network
   """
-  def __init__(self, net:network, epochs:int, data:dataset,learn_rate=0.1):
+  def __init__(self, net:network, epochs:int, data:dataset, train_func=None,learn_rate=0.1):
     self.net = net
     self.epochs = epochs
     self.data = data
     self.learn_rate = learn_rate
+    self.train_func = train_func
     self.debug = True
 
   def get_full_data_loss(self):
@@ -37,7 +38,8 @@ class trainer:
     starts training the network
     """
     for epoch in range(self.epochs):
-      self.print(f"Starting epoch {epoch}")
+      if self.train_func is not None:
+        self.train_func(self.net, epoch, self)
       weights = self.net.get_weights()
       temp = {}
       old_loss = self.get_full_data_loss()

@@ -52,7 +52,6 @@ class csvdata:
     """
 
     #this is a fucking mess
-    #i am going to kill myself
     #:(
     
     d = dataset()
