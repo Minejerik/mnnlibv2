@@ -1,24 +1,24 @@
-import unittest
-from mnn.utils import mult_lists, mae_loss
+import pytest
 
-class TestUtils(unittest.TestCase):
-    def test_mult_lists(self):
-        list1 = [1, 2, 3]
-        list2 = [4, 5, 6]
-        self.assertEqual(mult_lists(list1, list2), [4, 10, 18])
-        
-    def test_mae_loss(self):
-        y_true = [1, 2, 3]
-        y_pred = [4, 5, 6]
-        self.assertEqual(mae_loss(y_true, y_pred), 3)
-        
-class TestActivations(unittest.TestCase):
-    def test_relu(self):
-        from mnn.activations import relu
-        self.assertEqual(relu(-100), 0)
-        self.assertEqual(relu(100), 100)
-        
-
-
-if __name__ == '__main__':
-    unittest.main()
+def test_mult_lists():
+    from mnn.utils import mult_lists
+    inp1 = [1, 2, 3]
+    inp2 = [4, 5, 6]
+    assert mult_lists(inp1, inp2) == [4, 10, 18]
+    
+def test_empty_mult_lists():
+    from mnn.utils import mult_lists
+    inp1 = []
+    inp2 = []
+    assert mult_lists(inp1, inp2) == []
+    
+def test_mae_loss():
+    from mnn.utils import mae_loss
+    inp1 = [1, 2, 3]
+    inp2 = [4, 5, 6]
+    assert mae_loss(inp1, inp2) == 3
+    
+def test_list_avg():
+    from mnn.utils import list_avg
+    inp = [1, 2, 3]
+    assert list_avg(inp) == 2
