@@ -2,4 +2,4 @@
 
 This is version two of my neural network library.
 
-This does work with pypy, and it is recommended to use it with pypy.
+THIS DOES NOT WORK w/ PYPY DO NOT USE w/ PYPY
