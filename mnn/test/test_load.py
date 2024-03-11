@@ -23,3 +23,22 @@ def test_layer_activations():
     l = load(f"{t}/test.mnn")
     net = l.load()
     assert net.layers[0].neurons[0].activation(5) == 5
+
+def test_network_error():
+    from mnn.load import load
+    import os
+    t = os.path.dirname(__file__)
+    l = load(f"{t}/test.mnn")
+    net = l.load()
+    with pytest.raises(Exception):
+        net.run([1.0,2.0,3.0,4.0])
+
+def test_network_run():
+    from mnn.load import load
+    import os
+    t = os.path.dirname(__file__)
+    l = load(f"{t}/test.mnn")
+    net = l.load()
+    print(net.run([1.0,2.0,3.0]))
+
+test_network_run()
