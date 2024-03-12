@@ -6,9 +6,10 @@ pyproject.toml
 /.upm
 .replit
 replit.nix
-main.py
-*.mnn
+main.pyc
 *.pyc
 *.csv
 mnn/__pycache__
 mnn/test/__pycache__
+.pytest_cache
+main.py
