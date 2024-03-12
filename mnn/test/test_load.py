@@ -34,11 +34,11 @@ def test_network_error():
         net.run([1.0,2.0,3.0,4.0])
 
 def test_network_run():
+    MODEL_OUTPUT = [-4.070815362850945, -5.147042327990695, 1.5272360153526403]
     from mnn.load import load
     import os
     t = os.path.dirname(__file__)
     l = load(f"{t}/test.mnn")
     net = l.load()
-    print(net.run([1.0,2.0,3.0]))
-
+    assert net.run([1.0,2.0,3.0]) == pytest.approx(MODEL_OUTPUT)
 test_network_run()

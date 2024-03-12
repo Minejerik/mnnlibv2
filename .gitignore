@@ -12,3 +12,4 @@ main.pyc
 mnn/__pycache__
 mnn/test/__pycache__
 .pytest_cache
+main.py
