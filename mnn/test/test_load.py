@@ -41,4 +41,3 @@ def test_network_run():
     l = load(f"{t}/test.mnn")
     net = l.load()
     assert net.run([1.0,2.0,3.0]) == pytest.approx(MODEL_OUTPUT)
-test_network_run()
