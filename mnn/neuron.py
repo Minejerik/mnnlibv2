@@ -23,10 +23,12 @@ class neuron():
     returns the output of the neuron
     """
     w_l = [w.get_weight() for w in self.weights]
-    temp = mult_lists(input, w_l)
-    temp = sum(temp)
+    sum = 0
+    for a, b in zip(w_l, input):
+      sum += a*b
+    # temp = sum(temp)
     # temp += self.bias.get_weight()
-    temp = self.activation(inp=temp)
+    temp = self.activation(inp=sum)
     return temp
 
   def get_weights(self):

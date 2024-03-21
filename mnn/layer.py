@@ -1,6 +1,5 @@
 from mnn.neuron import neuron
 
-
 class layer:
 
   """
@@ -32,7 +31,10 @@ class layer:
     """
     gets the output for the layer based on the input
     """
-    temp = []
+
+    results = []
+
     for n in self.neurons:
-      temp.append(n.run(input))
-    return temp
+      results.append(n.run(input))
+
+    return results

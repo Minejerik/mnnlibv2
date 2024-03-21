@@ -10,11 +10,7 @@ def relu(inp:float):
   if x < 0 : return 0
   else return x
   """
-  __name__ = "relu"
-  if inp < 0:
-    return 0
-  else:
-    return inp
+  return 0 if inp < 0 else inp
 
 
 def sigmoid(inp:float):
@@ -23,7 +19,6 @@ def sigmoid(inp:float):
   good for having negative numbers
   and for more complex networks
   """
-  __name__ = "sigmoid"
   return 1 / (1 + math.exp(-inp))
 
 
@@ -36,7 +31,6 @@ def straight(inp:float):
   good for simple networks
   """
   
-  __name__ = "straight"
   return inp
 
 
@@ -47,11 +41,8 @@ def binary(inp:float):
   else return 0
   good for binary classification
   """
-  __name__ = "binary"
-  if inp <= 0:
-    return 0
-  else:
-    return 1
+  
+  return 1 if inp > 0 else 0
 
 
 def leakyrelu(inp:float):
@@ -59,8 +50,5 @@ def leakyrelu(inp:float):
   Leaky relu activation function
   in most cases better than relu
   """
-  __name__ = "leakyrelu"
-  if inp < 0:
-    return inp * 0.01
-  else:
-    return inp
+
+  return inp if inp > 0 else inp * 0.01

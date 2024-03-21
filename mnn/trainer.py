@@ -16,10 +16,35 @@ class trainer:
 
   def get_full_data_loss(self):
     """
-    returns the loss of the full dataset fiven
+    returns the loss of the full dataset given
     """
     losses = []
     for i,o in zip(self.data.inps, self.data.outs):
+      losses.append(mae_loss(self.net.run(i),o))
+    return list_avg(losses)
+  
+  def get_train_data_loss(self):
+    """
+    returns the loss of the training subset of data
+    """
+    losses = []
+
+    split = int(len(self.data.inps) * 0.8)
+
+    for i,o in zip(self.data.inps[:split], self.data.outs[:split]):
+      losses.append(mae_loss(self.net.run(i),o))
+    return list_avg(losses)
+
+    
+  def get_test_data_loss(self):
+    """
+    returns the loss of the test subset of data
+    """
+    losses = []
+
+    split = int(len(self.data.inps) * 0.8)
+
+    for i,o in zip(self.data.inps[split:], self.data.outs[split:]):
       losses.append(mae_loss(self.net.run(i),o))
     return list_avg(losses)
 
@@ -42,12 +67,12 @@ class trainer:
         self.train_func(self.net, epoch, self)
       weights = self.net.get_weights()
       temp = {}
-      old_loss = self.get_full_data_loss()
+      old_loss = self.get_train_data_loss()
       for weight in weights:
         old_weight = weight.weight
         t = plus_minus(old_weight, self.learn_rate)
         weight.weight = t
-        new_loss = self.get_full_data_loss()
+        new_loss = self.get_train_data_loss()
         weight.weight = old_weight
         dif = old_loss - new_loss
         temp[dif] = (weight,t)
